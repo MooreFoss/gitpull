@@ -197,13 +197,6 @@ repository: "git@github.com:username/private-repo.git"
 
 如果使用 HTTPS，可以先在服务端机器上手动执行一次 Git 登录，让系统记住凭据，之后插件即可复用。
 
-不推荐把 token 直接明文写进配置文件：
-
-```yml
-repository: "https://username:yourtoken@github.com/username/repo.git"
-```
-
-
 ## 注意事项
 
 - 仓库名字不能使用 `reload`
