@@ -1,0 +1,32 @@
+# Git 可执行命令。
+# 如果系统环境变量里已经有 git，保持默认即可。
+# 也可以改成绝对路径，例如：
+# git-command: "C:/Program Files/Git/bin/git.exe"(Windows)
+# git-command: "/bin/git"(Linux/Mac)
+git-command: git
+
+# 当目标目录不存在，或不是 Git 仓库且目录为空时，是否自动 clone。
+clone-if-missing: true
+
+# 单个仓库执行 git clone / git pull 的超时时间，单位为秒。
+timeout-seconds: 300
+
+# 多仓库配置。
+# 每个仓库使用一个唯一名字区分，这个名字也会用于命令：
+# /pull <name>
+repositories:
+  # 仓库名称示例 1
+  example1:
+    # 远程仓库地址，支持 HTTPS 或 SSH
+    repository: "https://github.com/example1/repo.git"
+    # 本地拉取目录。
+    # 相对路径会基于服务端根目录解析。
+    directory: "world/datapacks/repo"
+    # 目标分支。留空时使用仓库默认分支。
+    branch: "master"
+
+  # 仓库名称示例 2
+  example2:
+    repository: "https://github.com/example2/repo.git"
+    directory: "world/datapacks/dev"
+    branch: "dev"

@@ -1,0 +1,21 @@
+name: gitpull
+version: '1.0'
+main: studio.tokumei.gitpull.Gitpull
+api-version: '1.21'
+prefix: GitPull
+load: STARTUP
+authors: [ MooreFoss ]
+description: Pull the files from the git repository to the data package folder.
+website: https://github.com/MooreFoss/gitpull
+commands:
+  pull:
+    description: Pull or reload the configured git repository settings.
+    usage: /pull [name|reload]
+    permission: gitpull.pull
+permissions:
+  gitpull.pull:
+    description: Allows the user to run /pull.
+    default: op
+  gitpull.reload:
+    description: Allows the user to run /pull reload.
+    default: op
